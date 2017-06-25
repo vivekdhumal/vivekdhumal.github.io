@@ -37,7 +37,7 @@
 
                         <p>Symfony is a great framework in PHP where you can use its components individually in your normal projects where you don't required a bulky framework with a tons of libraries.</p>
 <p>Now we are going to use one of its component called the console component, and we were creating a simple hello world application in it.</p>
-<p>At this stage I'm assuming that you have a basic knowledge of <a href="http://getcomposer.org" target="_blank">Composer</a> - PHP dependencies manager and its autoloading feature.</p>
+<p>At this stage I'm assuming that you have a basic knowledge of <a href="http://getcomposer.org" target="_blank">Composer</a> - PHP dependencies manager and its auto loading feature.</p>
 <p>Okay then, lets create a sample project folder called <strong>symfony-console-app</strong> in that project create a blank <strong>composer.json</strong> file and then run</p>
 <pre><code class="language-bash">$ composer require symfony/console</code></pre>
 <p>After that your composer.json file will look like as follows:</p>
@@ -101,7 +101,7 @@ $app = new Application();
 $app-&gt;add(new HelloCommand());
 
 $app-&gt;run();</code></pre>
-<p>on the first line we are defining our environment as php, after that we are requring the autoload.php file from vendor directory.</p>
+<p>on the first line we are defining our environment as php, after that we are requiring the autoload.php file from vendor directory.</p>
 <p>then import the symfon's application namespace</p>
 <p>after that create the application instance and register that command as shown above and call the run method to boot the symfony app instance.</p>
 <p>Tadda, now your are done with code now just execute it by using following steps:</p>
