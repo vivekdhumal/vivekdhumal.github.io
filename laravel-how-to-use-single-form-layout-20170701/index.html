@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="As a developer, sometimes we come across the situation where we want to optimize our views to make it more organized and reusable.">
+
+    <title>Vivek Dhumal Laravel - How to use single form layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/all.css">
+</head>
+
+<body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89108682-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<div class="container">
+    <nav class="header">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Vivek Dhumal</h2>
+                <p class="text-muted">Web &amp; Android App Developer at <a href="http://thewebdepot.in" target="_blank">@TheWebDepot</a><br>Find me also <a href="https://twitter.com/vivekdhumal" target="_blank">@twitter</a> . <a href="http://github.com/vivekdhumal" target="_blank">@Github</a> . <a href="https://in.linkedin.com/in/vivekdhumal" target="_blank">@Linkedin</a></p>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="wrapper m-t-30">
+        
+    <div class="wrapper m-t-30">
+        <div class="full-width">
+            <a href="/">Back to home</a>
+
+            <h1>Laravel - How to use single form layout</h1>
+
+            <small>July 1, 2017</small>
+
+                        <p>Let's not create something new, just re-factor the existing things, also I assume that you have a good knowledge of Laravel framework (basic MVC).</p>
+<p>well laravel has a great template engine called <strong>Blade</strong>, and it is much simpler and yet effective than any other template engines I have ever used. so as a laravel developer we come across the situation where we want to optimize our bulky form layouts to make it more organized and reusable. well laravel has already provision for that, you just need to figure it out how?.</p>
+<p>Lets take the <strong>user</strong> model from laravel and consider that we are building the CRUD for users, in this situation do we required the separate form for create and update operations?.
+I don't think so, but having a two separate layout for each CRUD operation (create / update) it also acceptable solution, there is nothing wrong in that, but if we can use only one single form layout it will make our code-base much more optimized and easy for us to do critical form changes at a one place only.</p>
+<p>Lets work on it, create a sample project as bellow, you can name it whatever you like.</p>
+<pre><code class="language-bash">$ laravel new crud-app</code></pre>
+<p>Then configure the database in .env file and run migration to create a default user table provided by laravel.</p>
+<pre><code class="language-bash">$ php artisan migrate</code></pre>
+<p>and create the following controller file.
+<strong>app/Http/Controller/UserController.php</strong></p>
+<pre><code class="language-php">&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\User;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class UserController extends Controller
+{
+    public function index()
+    {
+        $data['users'] = User::paginate(10);
+        return view('users.index', $data);
+    }
+
+    public function create()
+    {
+        return view('users.add', [ 'user' =&gt; New User ]);
+    }
+
+    public function edit(User $user)
+    {
+        return view('users.edit', compact('user'));
+    }
+}</code></pre>
+<p>I am purposely not explaining the code for <strong>UserController.php</strong> as you can have your own code into that, we will more concentrating on views.
+also we are using laravel's default User Model file.</p>
+<p>lets create a folder to the path <strong>/resources/views/users</strong></p>
+<p>in that folder create a three files</p>
+<ul>
+<li><strong>add.blade.php</strong></li>
+<li><strong>edit.blade.php</strong></li>
+<li><strong>form.blade.php</strong></li>
+</ul>
+<p>I am using bootstrap as a css framework, you can use whatever you want.
+here is the code you need put into files respectively.</p>
+<p><strong>add.blade.php</strong></p>
+<pre><code class="language-html">@extends('layout')
+
+@section('content')
+&lt;div class="container-fluid"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-lg-8"&gt;
+            &lt;h1 class="page-header"&gt;Users&lt;/h1&gt;
+
+            &lt;ol class="breadcrumb"&gt;
+                &lt;li&gt;&lt;a href="{{ route('users.index') }}"&gt;Users&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="active"&gt;Add User&lt;/li&gt;
+            &lt;/ol&gt;
+
+            &lt;div class="panel panel-default"&gt;
+                &lt;div class="panel-heading"&gt;Add User&lt;/div&gt;
+
+                &lt;div class="panel-body"&gt;
+                    &lt;form action="{{ route('users.store') }}" method="post"&gt;
+                      @include('users.form')
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+@endsection</code></pre>
+<p><strong>edit.blade.php</strong></p>
+<pre><code class="language-html">@extends('layout')
+
+@section('content')
+&lt;div class="container-fluid"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-lg-8"&gt;
+            &lt;h1 class="page-header"&gt;Users&lt;/h1&gt;
+
+            &lt;ol class="breadcrumb"&gt;
+                &lt;li&gt;&lt;a href="{{ route('users.index') }}"&gt;Users&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="active"&gt;Edit User&lt;/li&gt;
+            &lt;/ol&gt;
+
+            &lt;div class="panel panel-default"&gt;
+                &lt;div class="panel-heading"&gt;Edit User&lt;/div&gt;
+
+                &lt;div class="panel-body"&gt;
+                    &lt;form action="{{ route('users.update', ['user'=&gt; $user-&gt;id]) }}" method="post"&gt;
+                        {{ method_field('PUT') }}
+
+                        @include('users.form')
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+@endsection</code></pre>
+<p>and finally <strong>form.blade.php</strong></p>
+<pre><code class="language-html">{{ csrf_field() }}
+
+&lt;div class="form-group{{ $errors-&gt;has('name')? ' has-error': '' }}"&gt;
+    &lt;label for="name"&gt;Name&lt;/label&gt;
+    &lt;input type="text" name="name" class="form-control" value="{{ old('name', $user-&gt;name) }}"&gt;
+    {!! $errors-&gt;has('name') ? '&lt;span class="help-block"&gt;'.$errors-&gt;first('name').'&lt;/span&gt;' : '' !!}
+&lt;/div&gt;
+
+&lt;div class="form-group{{ $errors-&gt;has('email')? ' has-error': '' }}"&gt;
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input type="text" name="email" class="form-control" value="{{ old('email', $user-&gt;email) }}"&gt;
+    {!! $errors-&gt;has('email') ? '&lt;span class="help-block"&gt;'.$errors-&gt;first('email').'&lt;/span&gt;' : '' !!}
+&lt;/div&gt;
+
+&lt;div class="form-group{{ $errors-&gt;has('password')? ' has-error': '' }}"&gt;
+    &lt;label for="password"&gt;Password&lt;/label&gt;
+    &lt;input type="password" name="password" class="form-control"&gt;
+    {!! $errors-&gt;has('password') ? '&lt;span class="help-block"&gt;'.$errors-&gt;first('password').'&lt;/span&gt;' : '' !!}
+&lt;/div&gt;
+
+&lt;hr&gt;
+
+&lt;div class="pull-right"&gt;
+    &lt;a type="button" href="{{ route('users.index') }}" class="btn btn-default"&gt;Cancel&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+    &lt;input type="submit" value="Submit" class="btn btn-primary"&gt;
+&lt;/div&gt;</code></pre>
+<p>as you can see we are not extending our layout in form.blade.php, because it is a partial view. and we are including this partial view in add.blade.php and edit.blade.php respectively, also we are binding user model object through user controller and providing a default value for old() helper function which will allow us to retrieve the old input if the validation is failed and if it does not having any value from old input then it will show values from user collection, how cool is that and the only thing you have to do is to provide empty user object with add.blade.php, just to avoid the laravel exceptions.</p>
+<p>also one thing important I am using the method spoofing (Since HTML forms can't make PUT, PATCH, or DELETE requests, you will need to add a hidden  _method field to spoof these HTTP verbs.) in edit.blade.php as <code>{{ method_field('PUT') }}</code>, if you are using resource routing, you can avoid this step if your are writing your own routes.</p>
+<p>so That's all folk, we haven't created anything new but we learned to optimize our forms to make it more reusable, and you can also use this trick for large complex forms.</p>
+                    </div>
+    </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <footer id="siteFooter" class="text-center">
+        <p>&copy; Vivek Dhumal 2017</p>
+    </footer>
+</div>
+
+<script src="/assets/js/prism.js"></script>
+</body>
+</html>
