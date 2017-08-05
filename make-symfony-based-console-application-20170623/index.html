@@ -6,15 +6,15 @@
     <meta name="description" content="In this article we will reviewing symfony's console component to make a basic Hello world application.">
 
     <title>Vivek Dhumal Make symfony based console application</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/prism.css">
-    <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
 
-<script>
+<!-- <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -22,31 +22,53 @@
 
   ga('create', 'UA-89108682-1', 'auto');
   ga('send', 'pageview');
+</script> -->
 
-</script>
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- Collapsed Hamburger -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <!-- Branding Image -->
+        <a class="navbar-brand" href="/">
+            <strong>Vivek Dhumal</strong>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="app-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About Me</a></li>
+        </ul>
+      </div>
+
+      <!-- <div class="row">
+          <div class="col-md-12 text-center">
+              <h2>Vivek Dhumal</h2>
+              <p class="text-muted">Web &amp; Android App Developer <a href="http://thewebdepot.in" target="_blank">@TheWebDepot</a><br>Find me also <a href="https://twitter.com/vivekdhumal" target="_blank">@twitter</a> . <a href="http://github.com/vivekdhumal" target="_blank">@Github</a> . <a href="https://in.linkedin.com/in/vivekdhumal" target="_blank">@Linkedin</a></p>
+          </div>
+      </div> -->
+    </div>
+</nav>
 
 <div class="container">
-    <nav class="header">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h2>Vivek Dhumal</h2>
-                <p class="text-muted">Web &amp; Android App Developer <a href="http://thewebdepot.in" target="_blank">@TheWebDepot</a><br>Find me also <a href="https://twitter.com/vivekdhumal" target="_blank">@twitter</a> . <a href="http://github.com/vivekdhumal" target="_blank">@Github</a> . <a href="https://in.linkedin.com/in/vivekdhumal" target="_blank">@Linkedin</a></p>
-            </div>
-        </div>
-    </nav>
+    <div class="post-wrapper">
+            <a href="/">Back to home</a><br><br>
 
+	<div class="panel panel-default">
+		<div class="panel-body">
+		    <h3 class="text-primary">Make symfony based console application</h3>
 
-    <div class="wrapper m-t-30">
-        
-    <div class="wrapper m-t-30">
-        <div class="full-width">
-            <a href="/">Back to home</a>
+		    <p><small>June 23, 2017</small></p>
 
-            <h1>Make symfony based console application</h1>
-
-            <small>June 23, 2017</small>
-
-                        <p>Symfony is a great framework in PHP where you can use its components individually in your normal projects where you don't required a bulky framework with a tons of libraries.</p>
+		                <p>Symfony is a great framework in PHP where you can use its components individually in your normal projects where you don't required a bulky framework with a tons of libraries.</p>
 <p>Now we are going to use one of its component called the console component, and we were creating a simple hello world application in it.</p>
 <p>At this stage I'm assuming that you have a basic knowledge of <a href="http://getcomposer.org" target="_blank">Composer</a> - PHP dependencies manager and its auto loading feature.</p>
 <p>Okay then, lets create a sample project folder called <strong>symfony-console-app</strong> in that project create a blank <strong>composer.json</strong> file and then run</p>
@@ -144,18 +166,17 @@ Available commands:
 <p>No your job is to figure it out how you can accept the argument from the command line and print the output based on argument.</p>
 <p><strong><em>reference links</em></strong> :</p>
 <p><a href="https://symfony.com/doc/current/components/console.html" target="_blank">Symfony Console Component - Official Documentation</a></p>
-                    </div>
+            		</div>
+	</div>
     </div>
-
-    </div>
-
-    <div class="clearfix"></div>
 
     <footer id="siteFooter" class="text-center">
         <p>&copy; Vivek Dhumal 2017</p>
     </footer>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="/assets/js/prism.js"></script>
 </body>
 </html>
