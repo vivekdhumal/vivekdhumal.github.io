@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Well Vim editor is look lil 90's when you install it, and its very boring to work with the old UI, let's make it lil better for our preference."/>
+    <meta name="author" content="Vivek Dhumal"/>
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@vivekdhumal"/>
+    <meta name="twitter:creator" content="@vivekdhumal"/>
+    <meta name="twitter:title" content="How to make Vim Editor to look cool"/>
+    <meta name="twitter:description" content="Well Vim editor is look lil 90's when you install it, and its very boring to work with the old UI, let's make it lil better for our preference."/>
+    <meta name="twitter:image" content="http://vivekdhumal.com/assets/images/vivek.jpg"/>
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://vivekdhumal.com/How-to-make-vim-editor-look-cool-20170812"/>
+    <meta property="og:title" content="How to make Vim Editor to look cool"/>
+    <meta property="og:image" content="http://vivekdhumal.com/assets/images/vivek.jpg"/>
+    <meta property="og:description" content="Well Vim editor is look lil 90's when you install it, and its very boring to work with the old UI, let's make it lil better for our preference."/>
+
+    <title>Vivek Dhumal - How to make Vim Editor to look cool</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89108682-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- Collapsed Hamburger -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <!-- Branding Image -->
+        <a class="navbar-brand" href="/">
+            <strong>Vivek Dhumal</strong>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="app-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="/">Home</a></li>
+          <li class=""><a href="/about-me/">About Me</a></li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="post-wrapper">
+            <a href="/">Back to home</a><br><br>
+
+	<div class="panel panel-default" id="postBodyPanel">
+		<div class="panel-body">
+		    <h3 class="text-primary post-heading">How to make Vim Editor to look cool</h3>
+
+		    <p><small>August 12, 2017</small></p>
+
+		                <p><a href="http://www.vim.org/">Vim editor</a> is look very 90's and its very boring to work with the old UI, as you may know that vim editor is the UNIX style editor and it is popular among the developer fraternity.</p>
+<p>It is highly configurable text editor, rock stable and is continuously being developed to become even better.</p>
+<p>If you look at the default vim UI it will look like as below.</p>
+<p><img src="/assets/images/default-vim.jpg" width="100%"><br></p>
+<p>Lets work on UI to make it more fancy and pleasant for the eyes, because, as a today's developer you need to enjoy the development. Well I am using Vim on windows, so if you are a mac user you can use <a href="http://macvim-dev.github.io/macvim/">MacVim</a>.</p>
+<p>I assume that you may know the basic vim commands like <code>:w, :e, :q, :pwd</code> and the different modes like <code>insert, visual, command</code> etc.</p>
+<p>So in nutshell we are going to</p>
+<ul>
+<li>enable syntax highlighting</li>
+<li>enable the line numbering</li>
+<li>change the color scheme</li>
+<li>change the font size and font family</li>
+<li>change the default line spacing to make it more cleaner.</li>
+</ul>
+<p>First thing first, will start by creating a <strong>_vimrc</strong> file to our users directory, for mac user they need to create a <strong>.vimrc</strong> file to their root (~/) directory.</p>
+<p>For your information _vimrc or .vimrc is vim configuration file, which helps you to make vim as per your preferences.</p>
+<p>So will run the following command in vim to create a blank _vimrc file to our user directory.</p>
+<pre><code class="language-vim">:e C:/users/Vivek/_vimrc</code></pre>
+<p>Before writing anything to it, you need to download <a href="https://github.com/tonsky/FiraCode">Fira code</a> font which I personally like it and use it frequently and very beautiful <a href="https://github.com/gosukiwi/vim-atom-dark">Vim Atom Dark</a> color scheme.</p>
+<p>You can install the font to your machine and for color scheme, extract the vim-atom-dark-master.zip, copy the files from /colors directory into your &quot;vim&quot; directory well mine is in <strong>C:\Program Files (x86)\Vim\vim80\colors</strong>.</p>
+<p>After that will come back to our _vimrc file and write the following code into it by pressing &quot;i&quot;.</p>
+<pre><code class="language-vim">syntax enable                       "enable the syntax highlighting.
+colorscheme atom-dark               "change to color scheme.
+set guifont=Fira_Code:h10           "Set the default font family and size.
+set number                          "Let's activate line numbers.
+set linespace=15                    "set Line height.</code></pre>
+<p>Will just save it with <code>:w</code> and source it by <code>:so %</code> which means we are applying configuration globally.</p>
+<p>And we are done, and if you can see any php file from your project or even _vimrc file you'll get to see the difference in UI theme changes like so.</p>
+<p><img src="/assets/images/final-vim.jpg" width="100%"><br></p>
+<p>Thanks folks.</p>
+            		</div>
+	</div>
+    </div>
+
+  <footer id="siteFooter" class="text-center">
+    &copy; Vivek Dhumal 2017
+  </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/assets/js/prism.js"></script>
+</body>
+</html>
