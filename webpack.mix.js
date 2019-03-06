@@ -14,6 +14,9 @@ class TailwindExtractor {
     }
 }
 
+mix.setPublicPath('./');
+mix.js('resources/assets/js/app.js', 'assets/js');
+
 mix.sass('resources/assets/css/app.scss', 'assets/css')
     .options({
         processCssUrls: false,
@@ -33,5 +36,11 @@ mix.webpackConfig({
                 }
             ]
         })
-    ]
+    ],
+    node: {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        dns: 'empty'
+    }
 });
