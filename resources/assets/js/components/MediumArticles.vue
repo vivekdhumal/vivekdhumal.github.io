@@ -5,7 +5,6 @@
         </div>
         <article v-else v-for="article in formatedArticles" class="mb-2 pt-4">
             <h5 class="text-md"><a :href="article.link" class="text-teal no-underline" target="_blank">{{ article.title }}</a></h5>
-            <!-- <p class="mb-6 text-sm">{{ new Date(article.pubDate).toDateString() }}</p> -->
             <p class="mb-6 text-sm">{{ article.pubDate }}</p>
         </article>
     </div>
