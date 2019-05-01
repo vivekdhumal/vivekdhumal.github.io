@@ -1,11 +1,11 @@
 <template>
-    <div class="mt-4">
-        <div v-if="loading" class="text-md">
+    <div class="mt-2">
+        <div v-if="loading" class="text-xl">
             Loading articles...
         </div>
-        <article v-else v-for="article in formatedArticles" class="mb-2 pt-4">
-            <h5 class="text-md"><a :href="article.link" class="text-teal no-underline" target="_blank">{{ article.title }}</a></h5>
-            <p class="mb-6 text-sm">{{ article.pubDate }}</p>
+        <article v-else v-for="article in formatedArticles" class="mb-4 bg-white shadow rounded border-l-4 border-blue p-4">
+            <h5 class="text-lg"><a :href="article.link" class="text-blue no-underline" target="_blank">{{ article.title }}</a></h5>
+            <p class="text-sm text-grey-darker">{{ article.pubDate }}</p>
         </article>
     </div>
 </template>

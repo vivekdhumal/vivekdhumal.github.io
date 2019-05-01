@@ -9,25 +9,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/app.css">
 </head>
-<body class="font-sans font-normal leading-normal text-black text-2xl bg-white">
-    <div class="w-full sm:flex" id="app">
-        <aside class="lg:w-2/5 bg-grey-lighter p-12 lg:min-h-screen">
-           <h1 class="lg:text-5xl">Hi, I'm Vivek V. Dhumal</h1>
-           <p class="mt-4">I'm a full-stack web developer from Mumbai - India.</p>
-           <p class="mt-2">I like to make things that actually works, I also share everything online which I know about software development & which can helps other practically.</p>
-           <p class="mt-2">You can connect with me on the following: </p>
+<body class="font-sans font-normal leading-normal text-black text-2xl bg-grey-lighter min-h-screen">
+    <div class="w-full" id="app">
+        <header class="bg-gradient-blue-to-purple text-white text-center w-full py-8 px-4 mb-8">
+            <div class="container mx-auto">
+               <h1 class="text-4xl">Hi, I'm Vivek V. Dhumal</h1>
+               <p class="mt-4 text-lg">I'm a full-stack web developer from Mumbai - India.</p>
+               <p class="mt-1 text-lg">You can connect with me on the following: </p>
 
-           <p class="mt-4">
-                <a href="https://twitter.com/vivekdhumal" class="text-md text-teal" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="https://medium.com/@vivekdhumal" class="text-md text-teal ml-4" title="Medium" target="_blank"><i class="fa fa-medium"></i></a>
-                <a href="https://github.com/vivekdhumal" class="text-md text-teal ml-4" title="Github" target="_blank"><i class="fa fa-github"></i></a>
-                <a href="https://www.quora.com/profile/Vivek-Vijaykant-Dhumal" class="text-md text-teal ml-4" title="Quora" target="_blank"><i class="fa fa-quora"></i></a>
-                <a href="mailto:dhumal.vivek02@gmail.com" class="text-md text-teal ml-4" title="Mail" target="_blank"><i class="fa fa-envelope"></i></a>
-            </p>
-        </aside>
+               <p class="mt-4">
+                    <a href="https://twitter.com/vivekdhumal" class="text-md text-white" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://medium.com/@vivekdhumal" class="text-md text-white ml-4" title="Medium" target="_blank"><i class="fa fa-medium"></i></a>
+                    <a href="https://github.com/vivekdhumal" class="text-md text-white ml-4" title="Github" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://www.quora.com/profile/Vivek-Vijaykant-Dhumal" class="text-md text-white ml-4" title="Quora" target="_blank"><i class="fa fa-quora"></i></a>
+                    <a href="mailto:dhumal.vivek02@gmail.com" class="text-md text-white ml-4" title="Mail" target="_blank"><i class="fa fa-envelope"></i></a>
+                </p>
+            </div>
+        </header>
 
-        <section class="lg:w-3/5 lg:min-h-screen p-12">
-            <h2 class="text-3xl w-full border-b pb-3">Latest articles</h2>
+        <section class="container mx-auto px-4">
+            <h2 class="text-2xl w-full mb-3 text-grey-darker">Latest articles</h2>
             <medium-articles></medium-articles>
         </section>
     </div>
