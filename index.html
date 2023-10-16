@@ -1,38 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Vivek Dhumal - Web Developer | Android Developer</title>
-    <meta name="author" content="Vivek Dhumal">
-    <meta name="keywords" content="Vivek Dhumal, Web Developer in Mumbai, Web developer in India">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Dhumal - Software Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background: linear-gradient(135deg, #3494E6, #EC6EAD);
+            animation: gradient 10s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background: linear-gradient(135deg, #3494E6, #EC6EAD);
+            }
+            25% {
+                background: linear-gradient(135deg, #EC6EAD, #74EBD5);
+            }
+            50% {
+                background: linear-gradient(135deg, #74EBD5, #E7316D);
+            }
+            75% {
+                background: linear-gradient(135deg, #E7316D, #3494E6);
+            }
+            100% {
+                background: linear-gradient(135deg, #3494E6, #EC6EAD);
+            }
+        }
+    </style>
 </head>
-<body class="font-sans font-normal leading-normal text-black text-2xl bg-grey-lighter">
-    <div class="w-full" id="app">
-        <header class="bg-gradient-blue-to-purple text-white text-center w-full py-8 px-4 mb-8">
-            <div class="container mx-auto">
-               <h1 class="text-4xl">Hi, I'm Vivek V. Dhumal</h1>
-               <p class="mt-4 text-lg">I'm a full-stack web developer from Mumbai - India.</p>
-               <p class="mt-1 text-lg">You can connect with me on the following: </p>
-
-               <p class="mt-4">
-                    <a href="https://twitter.com/vivekdhumal" class="text-md text-white" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="https://medium.com/@vivekdhumal" class="text-md text-white ml-4" title="Medium" target="_blank"><i class="fa fa-medium"></i></a>
-                    <a href="https://github.com/vivekdhumal" class="text-md text-white ml-4" title="Github" target="_blank"><i class="fa fa-github"></i></a>
-                    <a href="https://www.quora.com/profile/Vivek-Vijaykant-Dhumal" class="text-md text-white ml-4" title="Quora" target="_blank"><i class="fa fa-quora"></i></a>
-                    <a href="mailto:dhumal.vivek02@gmail.com" class="text-md text-white ml-4" title="Mail" target="_blank"><i class="fa fa-envelope"></i></a>
-                </p>
-            </div>
-        </header>
-
-        <section class="container mx-auto px-4">
-            <h2 class="text-2xl w-full mb-3 text-grey-darker">Latest articles</h2>
-            <medium-articles></medium-articles>
-        </section>
-    </div>
-
-    <script type="text/javascript" src="/assets/js/app.js"></script>
+<body class="text-white">
+    <header class="flex flex-col justify-center items-center min-h-screen">
+        <h1 class="text-4xl md:text-6xl lg:text-8xl font-bold text-center">Vivek Dhumal</h1>
+        <p class="text-lg md:text-2xl lg:text-3xl text-center">Software Developer with 10+ years of experience</p>
+        <p class="mt-4 md:mt-8 lg:mt-12 text-center">Specializing in Laravel, PHP, Codeigniter, MySQL, Node.js, Vue.js, Tailwind CSS, Bootstrap CSS, Android Java</p>
+        <a href="mailto:dhumal.vivek02@gmail.com" class="mt-8 md:mt-12 lg:mt-16 px-8 py-4 bg-indigo-600 hover:bg-indigo-800 rounded-full text-lg md:text-xl lg:text-2xl transition duration-300 ease-in-out transform hover:scale-105">
+            Contact Me
+        </a>
+    </header>
 </body>
 </html>
