@@ -2,14 +2,14 @@
 
 @section('body')
 <header class="bg-blue-600 text-white py-12">
-<div class="container mx-auto text-center">
-    <h1 class="text-4xl font-bold">Hello, I'm Vivek V. Dhumal</h1>
-    <p class="mt-4 text-xl">Crafting scalable web and mobile solutions for over 12 years.</p>
-    <div class="mt-6 space-x-4">
-    <a href="#portfolio" class="bg-white text-blue-600 px-6 py-2 rounded font-semibold">View My Portfolio</a>
-    <a href="#contact" class="bg-transparent border border-white px-6 py-2 rounded">Contact Me</a>
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold">Hello, I'm Vivek V. Dhumal</h1>
+        <p class="mt-4 text-xl">Crafting scalable web and mobile solutions for over 12 years.</p>
+        <div class="mt-6 space-x-4">
+            <a href="#portfolio" class="bg-white text-blue-600 px-6 py-2 rounded font-semibold">View My Portfolio</a>
+            <a href="mailto:dhumal.vivek02@gmail.com" class="bg-transparent border border-white px-6 py-2 rounded">Contact Me</a>
+        </div>
     </div>
-</div>
 </header>
 
 <!-- About Section -->
