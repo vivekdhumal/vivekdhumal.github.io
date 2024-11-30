@@ -5,16 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vivek V. Dhumal</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Tailwind does not have sliding animations by default */
+    .menu-hidden {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .menu-visible {
+      transform: translateX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- Navigation Menu -->
   <nav class="bg-white shadow w-full z-10">
-    <div class="container mx-auto flex justify-between items-center py-4">
+    <div class="container mx-auto flex justify-between items-center py-4 px-4 md:px-0">
       <!-- Logo/Brand -->
       <a href="#" class="text-2xl font-bold text-blue-600">Vivek V. Dhumal</a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-toggle" class="block md:hidden focus:outline-none">
+        <svg class="w-6 h-6 text-gray-800" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
 
+      <!-- Mobile Navigation Panel -->
+      <div id="mobile-menu" class="fixed top-0 right-0 w-3/4 h-full bg-white shadow-lg menu-hidden z-20 md:hidden">
+        <button id="menu-close" class="absolute top-4 right-4 focus:outline-none">
+          <svg class="w-6 h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <ul class="mt-16 space-y-6 text-gray-700 text-center">
+          <li><a href="#about" class="hover:text-blue-600 text-lg">About</a></li>
+          <li><a href="#skills" class="hover:text-blue-600 text-lg">Skills</a></li>
+          <li><a href="#portfolio" class="hover:text-blue-600 text-lg">Portfolio</a></li>
+          <li><a href="https://medium.com/@vivekdhumal" target="_blank" class="hover:text-blue-600 text-lg">Blogs</a></li>
+          <li><a href="https://github.com/vivekdhumal" target="_blank" class="hover:text-blue-600 text-lg">Github</a></li>
+          <li><a href="https://in.linkedin.com/in/vivekdhumal" target="_blank" class="hover:text-blue-600 text-lg">LinkedIn</a></li>
+          <li><a href="mailto:dhumal.vivek02@gmail.com" class="hover:text-blue-600 text-lg">Contact</a></li>
+        </ul>
+      </div>
+      
       <!-- Menu Items -->
-      <ul class="flex space-x-6 text-gray-700">
+      <ul id="menu" class="hidden md:flex space-x-6 text-gray-700">
         <li><a href="#about" class="hover:text-blue-600">About</a></li>
         <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
         <li><a href="#portfolio" class="hover:text-blue-600">Portfolio</a></li>
@@ -25,21 +61,21 @@
       </ul>
     </div>
   </nav>
-
+  
   <!-- Header Section -->
-  <header class="bg-blue-600 text-white py-12">
+  <header class="bg-blue-600 text-white py-12 px-4">
     <div class="container mx-auto text-center">
-      <h1 class="text-4xl font-bold">Hello, I'm Vivek</h1>
-      <p class="mt-4 text-xl">Crafting scalable web and mobile solutions for over 12 years.</p>
+      <h1 class="text-4xl md:text-5xl font-bold">Hello, I'm Vivek</h1>
+      <p class="mt-4 text-lg md:text-xl">Crafting scalable web and mobile solutions for over 12 years.</p>
       <div class="mt-6 space-x-4">
         <a href="#portfolio" class="bg-white text-blue-600 px-6 py-2 rounded font-semibold">View My Portfolio</a>
-        <a href="#contact" class="bg-transparent border border-white px-6 py-2 rounded">Contact Me</a>
+        <a href="mailto:dhumal.vivek02@gmail.com" class="bg-transparent border border-white px-6 py-2 rounded">Contact Me</a>
       </div>
     </div>
   </header>
-
+  
   <!-- About Section -->
-  <section id="about" class="py-16 bg-white">
+  <section id="about" class="py-16 bg-white px-4">
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">About Me</h2>
       <p class="text-lg leading-relaxed max-w-2xl mx-auto">
@@ -48,9 +84,9 @@
       </p>
     </div>
   </section>
-
+  
   <!-- Skills Section -->
-  <section id="skills" class="py-16 bg-gray-100">
+  <section id="skills" class="py-16 bg-gray-100 px-4">
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">My Expertise</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -73,46 +109,51 @@
       </div>
     </div>
   </section>
-
-  <!-- Projects Section -->
-  <section id="portfolio" class="py-16 bg-white">
+  
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-16 bg-white px-4">
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">Featured Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Project Card -->
         <div class="p-6 bg-gray-100 shadow rounded">
-            <h3 class="text-xl font-semibold">Gupshup SMS</h3>
-            <p class="mt-2 text-gray-600">This composer package will manages to send Text SMS using Gupshup.io service</p>
-            <p class="mt-2 text-sm text-gray-500">Tech: PHP</p>
-            <a href="https://github.com/vivekdhumal/gupshup-sms-php" class="mt-4 inline-block text-blue-600">View on GitHub</a>
+          <h3 class="text-xl font-semibold">Gupshup SMS</h3>
+          <p class="mt-2 text-gray-600">This composer package will manage to send Text SMS using Gupshup.io service.</p>
+          <p class="mt-2 text-sm text-gray-500">Tech: PHP</p>
+          <a href="https://github.com/vivekdhumal/gupshup-sms-php" class="mt-4 inline-block text-blue-600">View on GitHub</a>
         </div>
+
         <div class="p-6 bg-gray-100 shadow rounded">
-            <h3 class="text-xl font-semibold">Vhost-Manager</h3>
-            <p class="mt-2 text-gray-600">Command line application for virtual host manager for Wamp, Xampp and Mamp</p>
-            <p class="mt-2 text-sm text-gray-500">Tech: PHP Symfony</p>
-            <a href="https://github.com/vivekdhumal/Vhost-Manager/tree/master" class="mt-4 inline-block text-blue-600">View on GitHub</a>
+          <h3 class="text-xl font-semibold">Vhost-Manager</h3>
+          <p class="mt-2 text-gray-600">Command line application for virtual host manager for Wamp, Xampp and Mamp</p>
+          <p class="mt-2 text-sm text-gray-500">Tech: PHP Symfony</p>
+          <a href="https://github.com/vivekdhumal/Vhost-Manager" class="mt-4 inline-block text-blue-600">View on GitHub</a>
         </div>
-        <!-- Add more project cards as needed -->
+        <!-- Add more project cards -->
       </div>
     </div>
   </section>
-
-  <!-- Contact Section -->
-  <!-- <section id="contact" class="py-16 bg-gray-100">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="max-w-md mx-auto space-y-4">
-        <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-2 border rounded" required>
-        <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded" required>
-        <textarea name="message" rows="4" placeholder="Your Message" class="w-full px-4 py-2 border rounded" required></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded font-semibold w-full">Send Message</button>
-      </form>
-    </div>
-  </section> -->
-
+  
   <!-- Footer -->
   <footer class="bg-blue-600 text-white py-6 text-center">
     <p>© Vivek V. Dhumal, 2024.</p>
   </footer>
+  
+  <!-- Script to Toggle Mobile Menu -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('menu-hidden');
+      mobileMenu.classList.add('menu-visible');
+    });
+
+    menuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('menu-visible');
+      mobileMenu.classList.add('menu-hidden');
+    });
+  </script>
 </body>
 </html>
