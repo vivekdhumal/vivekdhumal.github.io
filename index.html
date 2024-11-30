@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivek V. Dhumal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navigation Menu -->
+  <nav class="bg-white shadow w-full z-10">
+    <div class="container mx-auto flex justify-between items-center py-4">
+      <!-- Logo/Brand -->
+      <a href="#" class="text-2xl font-bold text-blue-600">Vivek V. Dhumal</a>
+
+      <!-- Menu Items -->
+      <ul class="flex space-x-6 text-gray-700">
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+        <li><a href="#portfolio" class="hover:text-blue-600">Portfolio</a></li>
+        <li><a href="https://medium.com/@vivekdhumal" target="_blank" class="hover:text-blue-600">Blogs</a></li>
+        <li><a href="https://github.com/vivekdhumal" target="_blank" class="hover:text-blue-600">Github</a></li>
+        <li><a href="https://in.linkedin.com/in/vivekdhumal" target="_blank" class="hover:text-blue-600">LinkedIn</a></li>
+        <li><a href="mailto:dhumal.vivek02@gmail.com" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="bg-blue-600 text-white py-12">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold">Hello, I'm Vivek</h1>
+      <p class="mt-4 text-xl">Crafting scalable web and mobile solutions for over 12 years.</p>
+      <div class="mt-6 space-x-4">
+        <a href="#portfolio" class="bg-white text-blue-600 px-6 py-2 rounded font-semibold">View My Portfolio</a>
+        <a href="#contact" class="bg-transparent border border-white px-6 py-2 rounded">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">About Me</h2>
+      <p class="text-lg leading-relaxed max-w-2xl mx-auto">
+        I'm a full-stack developer with expertise in Laravel, CodeIgniter, Vue.js, and Android (Java). 
+        I specialize in creating efficient, scalable solutions and have a passion for problem-solving in web and mobile development.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 bg-gray-100">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">My Expertise</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="p-6 bg-white shadow rounded">
+          <h3 class="text-xl font-semibold">Backend</h3>
+          <p class="mt-2">Laravel, CodeIgniter, PHP, Express Js, Adonis Js</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded">
+          <h3 class="text-xl font-semibold">Frontend</h3>
+          <p class="mt-2">Vue.js, React js, HTML5, CSS3, JavaScript, Next js, Nuxt js</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded">
+          <h3 class="text-xl font-semibold">Mobile Development</h3>
+          <p class="mt-2">Android (Java)</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded">
+          <h3 class="text-xl font-semibold">Other Tools</h3>
+          <p class="mt-2">Git, MySQL, PostgreSQL, MongoDB, REST APIs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="portfolio" class="py-16 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Featured Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Card -->
+        <div class="p-6 bg-gray-100 shadow rounded">
+            <h3 class="text-xl font-semibold">Gupshup SMS</h3>
+            <p class="mt-2 text-gray-600">This composer package will manages to send Text SMS using Gupshup.io service</p>
+            <p class="mt-2 text-sm text-gray-500">Tech: PHP</p>
+            <a href="https://github.com/vivekdhumal/gupshup-sms-php" class="mt-4 inline-block text-blue-600">View on GitHub</a>
+        </div>
+        <div class="p-6 bg-gray-100 shadow rounded">
+            <h3 class="text-xl font-semibold">Vhost-Manager</h3>
+            <p class="mt-2 text-gray-600">Command line application for virtual host manager for Wamp, Xampp and Mamp</p>
+            <p class="mt-2 text-sm text-gray-500">Tech: PHP Symfony</p>
+            <a href="https://github.com/vivekdhumal/Vhost-Manager/tree/master" class="mt-4 inline-block text-blue-600">View on GitHub</a>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <!-- <section id="contact" class="py-16 bg-gray-100">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="max-w-md mx-auto space-y-4">
+        <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-2 border rounded" required>
+        <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded" required>
+        <textarea name="message" rows="4" placeholder="Your Message" class="w-full px-4 py-2 border rounded" required></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded font-semibold w-full">Send Message</button>
+      </form>
+    </div>
+  </section> -->
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-6 text-center">
+    <p>© Vivek V. Dhumal, 2024.</p>
+  </footer>
+</body>
+</html>
